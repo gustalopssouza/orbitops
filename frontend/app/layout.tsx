@@ -42,7 +42,7 @@ export default function RootLayout({
         </aside>
 
         {/* Conteúdo principal */}
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 bg-[#0B0F14]">
           {children}
         </main>
       </body>

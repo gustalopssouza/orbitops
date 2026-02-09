@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <>
       <header className="mb-8">
-        <h2 className="text-2xl font-medium">Visão Geral</h2>
+        <h2 className="text-2xl font-medium text-blue-400">Visão Geral</h2>
         <p className="text-gray-400 text-sm">
           Monitoramento operacional de links Starlink
         </p>

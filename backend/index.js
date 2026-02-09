@@ -12,6 +12,14 @@ app.get("/health", (req, res) => {
   res.json({ status: "OrbitOps backend running" });
 });
 
+app.get("/api/status", (req, res) => {
+  res.json({
+    app: "OrbitOps",
+    backend: "online",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {

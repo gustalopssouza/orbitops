@@ -1,10 +1,24 @@
-export default function Home() {
+async function getBackendStatus() {
+  const res = await fetch("http://localhost:4000/api/status", {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
+export default async function Home() {
+  const status = await getBackendStatus();
+
   return (
     <>
       <header className="mb-8">
-        <h2 className="text-2xl font-medium text-blue-400">Visão Geral</h2>
-        <p className="text-gray-400 text-sm">
+        <h2 className="text-2xl font-medium text-blue-400">
+          Visão Geral
+        </h2>
+        <p className="text-gray-500 text-sm">
           Monitoramento operacional de links Starlink
+        </p>
+        <p className="text-xs text-gray-600 mt-1">
+          Backend: {status.backend} • {status.timestamp}
         </p>
       </header>
 
